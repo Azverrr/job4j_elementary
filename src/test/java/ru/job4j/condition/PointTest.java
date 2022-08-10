@@ -17,6 +17,7 @@ public class PointTest {
         assertEquals(expected, out, 0.01);
     }
 
+    @Test
     public void when10To20Then2() {
         double expected = 2;
         int x1 = 1;
@@ -27,6 +28,7 @@ public class PointTest {
         assertEquals(expected, out, 0.01);
     }
 
+    @Test
     public void when02To04Then2() {
         double expected = 2;
         int x1 = 0;
