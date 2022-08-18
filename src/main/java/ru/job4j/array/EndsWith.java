@@ -6,7 +6,7 @@ public class EndsWith {
         for (int index = 0; index < post.length; index++) {
             int lastIndexWord = word.length - index - 1;
             int lastIndexPost = post.length - index - 1;
-            if (!String.valueOf(word[lastIndexWord]).equals(String.valueOf(post[lastIndexPost]))) {
+            if (word[lastIndexWord] != post[lastIndexPost]) {
                 result = false;
                 break;
             }
