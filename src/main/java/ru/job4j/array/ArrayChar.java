@@ -4,16 +4,9 @@ public class ArrayChar {
 
     public static boolean startsWith(char[] word, char[] pref) {
         boolean result = true;
-        String stringWord = "";
-        String stringPref = "";
-        for (char charWord : word) {
-            stringWord += charWord;
-        }
-        for (char charPref : pref) {
-            stringPref += charPref;
-            if (!stringWord.startsWith(stringPref)) {
+        for (int index = 0; index < pref.length; index++) {
+            if (word[index] != pref[index]) {
                 result = false;
-                break;
             }
         }
         return result;
