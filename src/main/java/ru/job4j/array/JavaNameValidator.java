@@ -10,12 +10,16 @@ public class JavaNameValidator {
         }
         char[] array = name.toCharArray();
         for (int charIndex = 1; charIndex < array.length; charIndex++) {
-            if (!isUpperLatinLetter(name.codePointAt(charIndex)) && !isLowerLatinLetter(name.codePointAt(charIndex)) && !isSpecialSymbol(name.codePointAt(charIndex)) && !isDigit(name.codePointAt(charIndex))) {
+            if (isNotValidChar(name.codePointAt(charIndex))) {
                 result = false;
                 break;
             }
         }
         return result;
+    }
+
+    public static boolean isNotValidChar(int code) {
+        return !isDigit(code) && !isSpecialSymbol(code) && !isUpperLatinLetter(code) && !isLowerLatinLetter(code);
     }
 
     public static boolean isSpecialSymbol(int code) {
