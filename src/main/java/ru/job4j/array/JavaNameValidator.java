@@ -5,15 +5,16 @@ import static java.lang.Character.isDigit;
 public class JavaNameValidator {
     public static boolean isNameValid(String name) {
         boolean result = true;
-        if (name.isEmpty() || !isLowerLatinLetter(name.codePointAt(0))) {
-            return false;
-        }
         char[] array = name.toCharArray();
-        for (int charIndex = 1; charIndex < array.length; charIndex++) {
-            if (isNotValidChar(name.codePointAt(charIndex))) {
-                result = false;
-                break;
+        if (!name.isEmpty() && isLowerLatinLetter(name.codePointAt(0))) {
+            for (int charIndex = 1; charIndex < array.length; charIndex++) {
+                if (isNotValidChar(name.codePointAt(charIndex))) {
+                    result = false;
+                    break;
+                }
             }
+        } else {
+            result = false;
         }
         return result;
     }
