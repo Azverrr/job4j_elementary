@@ -5,8 +5,8 @@ import static java.lang.Character.isDigit;
 public class JavaNameValidator {
     public static boolean isNameValid(String name) {
         boolean result = !name.isEmpty() && isLowerLatinLetter(name.codePointAt(0));
-        char[] array = name.toCharArray();
         if (result) {
+            char[] array = name.toCharArray();
             for (int charIndex = 1; charIndex < array.length; charIndex++) {
                 if (isNotValidChar(name.codePointAt(charIndex))) {
                     result = false;
