@@ -4,17 +4,15 @@ import static java.lang.Character.isDigit;
 
 public class JavaNameValidator {
     public static boolean isNameValid(String name) {
-        boolean result = true;
+        boolean result = !name.isEmpty() && isLowerLatinLetter(name.codePointAt(0));
         char[] array = name.toCharArray();
-        if (!name.isEmpty() && isLowerLatinLetter(name.codePointAt(0))) {
+        if (result) {
             for (int charIndex = 1; charIndex < array.length; charIndex++) {
                 if (isNotValidChar(name.codePointAt(charIndex))) {
                     result = false;
                     break;
                 }
             }
-        } else {
-            result = false;
         }
         return result;
     }
