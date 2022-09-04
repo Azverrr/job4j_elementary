@@ -22,5 +22,4 @@ public class DivideBySix {
     public static boolean isDivThree(int num) {
         return num % 3 == 0;
     }
-
 }
